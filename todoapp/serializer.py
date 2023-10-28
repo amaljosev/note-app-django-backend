@@ -11,7 +11,4 @@ class TodosSerializer(serializers.ModelSerializer):
             'Title',
             'Discription',
             'Completed',
-
-
-
         ]
