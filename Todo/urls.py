@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from employee import views as employee_views
-from todoapp import views as todo_views
+# from todoapp import views as todo_views
 
 router = routers.DefaultRouter(trailing_slash=False)
 
@@ -26,10 +26,11 @@ router = routers.DefaultRouter(trailing_slash=False)
 router.register('employeedetails', employee_views.Employee)
 
 # Register the Todos view
-router.register('todos', todo_views.Todos)
+# router.register('todos', todo_views.Todos)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('apis/', include('app.urls')),
+    path('todo/',include('todoapp.urls')),
     path('', include(router.urls)),
 ]
